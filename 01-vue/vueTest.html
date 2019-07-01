@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue测试</title>
+    <script src="vue.js"></script>
+    <style type="text/css">
+        table {
+            border: 1px solid black;
+        }
+        table {
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+        }
+        th, td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div id="res">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>价格</th>
+                <th>名称</th>
+                <th>数量</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="f in fruit">
+                <th>{{f.id}}</th>
+                <th>{{f.price}}</th>
+                <th>{{f.name}}</th>
+                <th>
+                    <button v-bind:disabled="f.count === 0" v-on:click="f.count-=1">-</button>
+                    {{f.count}}
+                    <button v-on:click="f.count+=1">+</button>
+                </th>
+                <th>
+                    <button v-on:click="f.count=0">移除</button>
+                </th>
+            </tr>
+        </table>
+        ${{totalPrice()}}
+    </div>
+
+    <div id="operate">
+        <p>{{site}}</p>
+    </div>
+
+    <div id="testif">
+        <p v-if="str == 'AA'">
+            AAAAAAAAAAAAAAA
+        </p>
+        <p v-else-if="str == BB">
+            BBBBBBBBBBBBBBBBBB
+        </p>
+        <p v-else-if="str == CC">
+            CCCCCCCCCCCCCCCCCC
+        </p>
+        <p v-else>
+            NNNNNNNNNNNNNNN
+        </p>
+    </div>
+
+    <div id="random">
+        <p v-if="Math.random()>0.5">
+            math random is > 0.5
+        </p>
+        <p v-else>
+            math random is < 0.5
+        </p>
+    </div>
+
+    <div id="iftest">
+        <p v-if="seen">you can seen me!!!</p>
+        <p v-if="look">you can look me!!!</p>
+    </div>
+
+    <div id="filter">
+        {{msg|capitalize}}
+        <input v-model="msg">
+    </div>
+
+    <div id="app">
+        <ol>
+            <li v-for = " data in stulist">
+                {{data.name}}-{{data.detile}}-{{data.attribute}}
+            </li>
+        </ol>
+    </div>
+
+
+
+
+    <div id="userinput">
+        <p>{{usermsg}}</p>
+        <input v-model = "usermsg">
+    </div>
+
+
+
+
+    <div id="reverse">
+        <p>{{msg}}</p>
+        <input v-model = 'msg'>
+        <button v-on:click="reverseMsg">click test</button>
+        <input type="button" v-on:click = 'reverseMsg' value="click test">
+    </div>
+
+
+
+</body>
+<script src="myVue.js"></script>
+</html>
