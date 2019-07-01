@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="utf-8">
+	<title>vue test</title>
+	<script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+	<div id="add">
+		<p>{{counter}}</p>
+		<button v-on:click="counter ++">click + test</button>
+		<button v-on:click="counter --">click - test</button>
+	</div>
+
+
+	<div id="swit">
+		<input type="text" v-model="inputMsg">
+		<input type="text" v-model="outputMsg">
+	</div>
+	<p id="info"></p>
+</body>
+<script type="text/javascript" src="../02-vue/02-vue.js"></script>
+</html>

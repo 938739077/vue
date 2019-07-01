@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+	<meta charset="utf-8">
+	<title>vue test</title>
+	<script type="text/javascript" src="../vue.js"></script>
+	<style type="text/css">
+		.disp{
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+		.hasE{
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="spp">
+		<div v-bind:class="classObj"></div>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<div id="app">
+		<div v-bind:class="{disp:isActivative , hasE:hasError}"></div>
+	</div>
+</body>
+<script type="text/javascript" src="02-style.js"></script>
+</html>
